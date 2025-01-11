@@ -10,12 +10,23 @@ export default {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: "0rem",
+        screens: {
+          "2xl": "1400px",
+        },
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        grayish: {
+          DEFAULT: "#262626",
+          foreground: "#fff",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

@@ -1,19 +1,32 @@
+import ContactFormSection from "@/components/base/ContactFormSection";
+import HeroSection from "@/components/base/HeroSection";
 import { useTranslations } from "next-intl";
 
 export default function HomePage() {
-  const t = useTranslations("HomePage");
+  const t = useTranslations("heroSection");
+  const b = useTranslations("buttons");
+
   return (
-    <div className="min-h-screen gr-bg px-20">
-      <h1 className="text-6xl max-w-4xl font-bold pt-32 mb-10  tracking-wide">
-        {t("title")}
-      </h1>
-      <h2 className="text-primary text-3xl">
-        UAE&lsquo;s Best Moving and Packing Company
-      </h2>
-      <p className="text-lg max-w-2xl mt-3">
-        Hamdan Movers and Packers is serving you with the top quality of moving
-        solutions for the 6 years in UAE.
-      </p>
-    </div>
+    <>
+      <HeroSection
+        points={[
+          { num: t("box21"), text: t("box22") },
+          { num: t("box11"), text: t("box12") },
+        ]}
+        title={t("headingTitle")}
+        subTitle={t("SubTitle")}
+        desciptions={t("description")}
+        buttonOne={{
+          name: b("quote"),
+          link: "/contact-us",
+        }}
+        buttonTwo={{
+          name: b("Our Services"),
+          link: "#services",
+        }}
+      />
+      <ContactFormSection />
+      <div className="h-screen" />
+    </>
   );
 }

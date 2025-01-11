@@ -7,7 +7,14 @@ const LanguageFormatContainer = ({
   children: React.ReactNode;
 }) => {
   const locale = useLocale();
-  return <main dir={locale === "ar" ? "rtl" : "ltr"}>{children}</main>;
+  return (
+    <main
+      className="container md:px-0 px-2"
+      dir={locale === "ar" ? "rtl" : "ltr"}
+    >
+      {children}
+    </main>
+  );
 };
 
 export default LanguageFormatContainer;

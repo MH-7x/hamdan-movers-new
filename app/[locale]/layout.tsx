@@ -5,6 +5,8 @@ import { routing } from "@/i18n/routing";
 import LanguageFormatContainer from "@/components/base/LanguageFormatContainer";
 import "../globals.css";
 import local from "next/font/local";
+import Navbar from "@/components/base/Navbar";
+
 const customFont = local({
   src: "../../public/madefor-display.var.original.ttf",
   weight: "400",
@@ -29,6 +31,11 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={customFont.className}>
+        <div
+          aria-hidden
+          className="gr-bg fixed top-0 left-0 w-full h-full -z-10"
+        />
+        <Navbar />
         <NextIntlClientProvider messages={messages}>
           <LanguageFormatContainer>{children}</LanguageFormatContainer>
         </NextIntlClientProvider>
