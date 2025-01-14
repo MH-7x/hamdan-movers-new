@@ -9,7 +9,7 @@ import { Button } from "../ui/button";
 
 function ContactFormSection() {
   return (
-    <section className="mt-36  con grid md:grid-cols-2 grid-cols-1 items-center md:gap-10 gap-16">
+    <section className="mt-36  con grid md:grid-cols-2 grid-cols-1 items-center gap-16">
       <Form />
       <div>
         <h2>
@@ -21,7 +21,7 @@ function ContactFormSection() {
             Professional Movers ?
           </Link>
         </h2>
-        <p className="md:text-xl mt-4">
+        <p className="md:text-xl text-lg mt-4">
           Get in touch with us today for a no-obligation quote and discover how
           we can make your relocation seamless and stress-free!
         </p>

@@ -21,25 +21,27 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const locale = (await params).locale;
+  const { locale } = await params; // Await the params to resolve
+
   if (!routing.locales.includes(locale as "en" | "ar")) {
     notFound();
   }
 
-  const messages = await getMessages();
+  const messages = await getMessages(); // Ensure getMessages uses the locale
 
   return (
     <html lang={locale}>
-      <body className={customFont.className}>
-        <div
-          aria-hidden
-          className="gr-bg fixed top-0 left-0 w-full h-full -z-10"
-        />
-        <Navbar />
-        <NextIntlClientProvider messages={messages}>
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <body className={customFont.className}>
+          <div
+            aria-hidden
+            className="gr-bg fixed top-0 left-0 w-full h-full -z-10"
+          />
+          <Navbar />
+
           <LanguageFormatContainer>{children}</LanguageFormatContainer>
-        </NextIntlClientProvider>
-      </body>
+        </body>
+      </NextIntlClientProvider>
     </html>
   );
 }
