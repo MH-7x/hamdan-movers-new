@@ -1,6 +1,10 @@
 import ContactFormSection from "@/components/base/ContactFormSection";
 import Features from "@/components/base/Features";
 import HeroSection from "@/components/base/HeroSection";
+import Locations from "@/components/base/Locations";
+import PickupTruck from "@/components/base/PickupTrck";
+import TrucksSizes from "@/components/base/TrucksSizes";
+import WhyChooseUs from "@/components/base/WhyChooseUs";
 import ServicesSlider from "@/components/ServicesSlider";
 import {
   CalendarClock,
@@ -16,6 +20,7 @@ export default function HomePage() {
   const b = useTranslations("buttons");
   const f = useTranslations("BrandingContent");
   const s = useTranslations("services");
+  const c = useTranslations("whyChooseUs");
   return (
     <>
       <HeroSection
@@ -111,6 +116,18 @@ export default function HomePage() {
         title={s("title")}
         desc={s("description")}
       />
+      <WhyChooseUs
+        sub={c("top")}
+        title={c("title")}
+        desc={c("description")}
+        point1={c("years")}
+        point2={c("projects")}
+        button1={b("Our Services")}
+        button2={b("Contact Us")}
+      />
+      <PickupTruck />
+      <TrucksSizes />
+      <Locations />
       <div className="h-screen" />
     </>
   );

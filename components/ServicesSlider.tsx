@@ -40,13 +40,13 @@ const ServicesSlider = ({ title, desc, services }: ServicesSliderProps) => {
               loading="lazy"
               src={service.img}
             />
-            <div className="absolute inset-0 text-white bg-gradient-to-t from-black/90 to-black/5 w-full h-full z-10 p-5 flex justify-end flex-col items-start">
+            <div className="absolute inset-0 text-white bg-gradient-to-t from-black/90 to-black/5 w-full h-full z-10 md:p-5 p-3 flex justify-end flex-col items-start">
               <Link href={service.link}>
-                <h3 className="drop-shadow-md font-bold tracking-wide">
+                <h3 className="drop-shadow-md font-bold text-white tracking-wide">
                   {service.name}
                 </h3>
               </Link>
-              <p className="text-start md:text-base text-base/5 text-accent mt-3">
+              <p className="text-start md:text-base text-base/5 text-accent md:mt-3 mt-2">
                 {service.desc}
               </p>
               <Link className="mb-4" href={service.link}>

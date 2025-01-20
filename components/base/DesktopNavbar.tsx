@@ -53,7 +53,7 @@ const List = [
 
 function DesktopNavbar() {
   return (
-    <header className="w-full fixed top-0 left-0 z-50 pt-4">
+    <header className="w-full fixed top-0 left-0 z-50 pt-2">
       <nav className="w-full md:w-11/12 mx-auto bg-background/80 backdrop-blur-lg h-[74px] rounded-3xl flex items-center justify-between px-10">
         <Link href={"/"}>
           <img
